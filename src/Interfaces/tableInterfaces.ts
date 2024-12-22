@@ -8,8 +8,9 @@ export interface TableData {
 }
 
 export interface EditTable {
-  isOpen: boolean;
+  isOpenEditModal: boolean;
   data?: object | null;
+  isOpenDeleteModal: boolean;
 }
 
 export interface ShortnerState {

@@ -31,15 +31,16 @@ const EditTableData: React.FC = () => {
   const handleClose = () => {
     dispatch(
       handleEditTable({
+        ...editTable,
         ...(editTable.data ? editTable.data : {}),
-        isOpen: false,
+        isOpenEditModal: false,
       })
     );
   };
 
   return (
     <DialogWrapper
-      open={editTable.isOpen}
+      open={editTable.isOpenEditModal}
       setOpen={handleClose}
       title="Edit link"
     >

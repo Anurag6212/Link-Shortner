@@ -18,8 +18,9 @@ const initialState: ShortnerState = {
   ],
   tableInput: '',
   editTable: {
-    isOpen: false,
+    isOpenEditModal: false,
     data: null,
+    isOpenDeleteModal: false,
   },
 };
 
@@ -31,8 +32,8 @@ const shortnerSlice = createSlice({
       state.tableInput = action.payload;
     },
     handleEditTable: (state, action: PayloadAction<EditTable>) => {
-      console.log(action.payload, state);
-      state.editTable.isOpen = action.payload.isOpen;
+      state.editTable.isOpenEditModal = action.payload.isOpenEditModal;
+      state.editTable.isOpenDeleteModal = action.payload.isOpenDeleteModal;
       state.editTable.data = action.payload.data;
     },
     addUrl: (state, action: PayloadAction<TableData>) => {

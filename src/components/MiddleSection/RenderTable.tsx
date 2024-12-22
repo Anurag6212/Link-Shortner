@@ -13,6 +13,7 @@ import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import { handleEditTable } from '@/lib/Reducers/shortnerSlice';
 import { Pencil, Trash2 } from 'lucide-react';
 import dynamic from 'next/dynamic';
+import DeleteTableData from './DeleteTableData';
 
 const EditTableData = dynamic(
   () => import('@/components/MiddleSection/EditTableData'),
@@ -29,8 +30,19 @@ const RenderTable = () => {
   const handleEdit = (data: TableData) => {
     dispatch(
       handleEditTable({
+        ...editTable,
         data: data,
-        isOpen: true,
+        isOpenEditModal: true,
+      })
+    );
+  };
+
+  const handleDelete = (data: TableData) => {
+    dispatch(
+      handleEditTable({
+        ...editTable,
+        data: data,
+        isOpenDeleteModal: true,
       })
     );
   };
@@ -64,7 +76,9 @@ const RenderTable = () => {
                   className="h-[1rem] w-[1rem] cursor-pointer	 rotate-0 scale-100 transition-all"
                 />
                 <Trash2
-                  onClick={() => {}}
+                  onClick={() => {
+                    handleDelete(shortner);
+                  }}
                   className="h-[1rem] w-[1rem] cursor-pointer	 rotate-0 scale-100 transition-all"
                 />
               </TableCell>
@@ -72,7 +86,8 @@ const RenderTable = () => {
           ))}
         </TableBody>
       </Table>
-      {editTable.isOpen && <EditTableData />}
+      {editTable.isOpenEditModal && <EditTableData />}
+      {editTable.isOpenDeleteModal && <DeleteTableData />}
     </>
   );
 };
