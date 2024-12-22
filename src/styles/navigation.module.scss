@@ -1,0 +1,19 @@
+.navigation {
+    @apply flex justify-between items-center pt-8 px-4;
+}
+
+.appName {
+    @apply bg-gradient-to-r from-fuchsia-700 to-purple-700 inline-block text-transparent bg-clip-text text-xl font-bold;
+}
+
+.buttonGroupClass {
+    @apply flex gap-3;
+}
+
+.navigationBtn {
+    @apply rounded-3xl text-xs font-semibold;
+}
+
+.navigationBtnActive {
+    @apply bg-sky-600 text-white hover:bg-sky-600;
+}

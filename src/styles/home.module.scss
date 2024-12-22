@@ -1,0 +1,6 @@
+.home {
+  background-image: url('../Images/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  @apply pb-[40px] w-screen h-screen overflow-x-hidden;
+}

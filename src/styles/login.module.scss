@@ -1,0 +1,15 @@
+.input {
+  @apply w-full px-4 py-2 rounded-md bg-black border border-gray-600 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500;
+}
+
+.label {
+  @apply block text-sm font-medium mb-2;
+}
+
+.dialog-wrapper {
+  @apply flex flex-col;
+}
+
+.dialog-footer {
+  @apply mt-4;
+}

@@ -1,0 +1,15 @@
+.custom-ib {
+  @apply flex items-center border-[3px] gap-2 overflow-hidden h-[56px] border-[#353C4A] rounded-full w-[400px] justify-between pe-4 bg-[#181E29];
+}
+
+.input {
+  &::placeholder {
+    color: #b1b1b1;
+    font-size: 12px
+  }
+  @apply placeholder-gray-200 h-full flex-1 outline-none bg-transparent ps-4;
+}
+
+.button {
+  @apply rounded-full bg-[#144EE3] hover:bg-[#144EE3] text-[#FFFFFF];
+}
