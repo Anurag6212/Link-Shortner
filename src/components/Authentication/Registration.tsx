@@ -7,13 +7,7 @@ import DialogWrapper from '../ui/dialog-wrapper';
 import styles from '../../styles/login.module.scss';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import { toggleLoginMode } from '@/lib/Reducers/authSlice';
-
-interface Inputs {
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
-}
+import { registerInput } from '@/Interfaces/formInterfaces';
 
 const Registration = ({}) => {
   const { loginMode } = useAppSelector((state) => state.auth);
@@ -24,9 +18,9 @@ const Registration = ({}) => {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<Inputs>();
+  } = useForm<registerInput>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<registerInput> = (data) => console.log(data);
 
   return (
     <DialogWrapper

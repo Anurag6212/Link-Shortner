@@ -25,7 +25,7 @@ const RenderTable = () => {
   const dispatch = useAppDispatch();
 
   const { tableData, editTable } = useAppSelector((state) => state.table);
-  
+
   const handleEdit = (data: TableData) => {
     dispatch(
       handleEditTable({
@@ -63,15 +63,16 @@ const RenderTable = () => {
                   }}
                   className="h-[1rem] w-[1rem] cursor-pointer	 rotate-0 scale-100 transition-all"
                 />
-                <Trash2 className="h-[1rem] w-[1rem] cursor-pointer	 rotate-0 scale-100 transition-all" />
+                <Trash2
+                  onClick={() => {}}
+                  className="h-[1rem] w-[1rem] cursor-pointer	 rotate-0 scale-100 transition-all"
+                />
               </TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
-      {
-        editTable.isOpen && <EditTableData />
-      }
+      {editTable.isOpen && <EditTableData />}
     </>
   );
 };
