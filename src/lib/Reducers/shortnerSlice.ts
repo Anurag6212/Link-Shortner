@@ -1,6 +1,9 @@
-import { EditTable, ShortnerState, TableData } from '@/Interfaces/tableInterfaces';
+import {
+  EditTable,
+  ShortnerState,
+  TableData,
+} from '@/Interfaces/tableInterfaces';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
 
 const initialState: ShortnerState = {
   tableData: [
@@ -27,9 +30,10 @@ const shortnerSlice = createSlice({
     changeTableInput: (state, action: PayloadAction<string>) => {
       state.tableInput = action.payload;
     },
-    handleEditTable: (state, action: PayloadAction<EditTable | null>) => {
-      state.editTable.isOpen = state.editTable.isOpen;
-      state.editTable.data = action.payload;
+    handleEditTable: (state, action: PayloadAction<EditTable>) => {
+      console.log(action.payload, state);
+      state.editTable.isOpen = action.payload.isOpen;
+      state.editTable.data = action.payload.data;
     },
     addUrl: (state, action: PayloadAction<TableData>) => {
       state.tableData.push(action.payload);

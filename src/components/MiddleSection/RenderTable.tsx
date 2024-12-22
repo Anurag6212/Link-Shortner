@@ -25,7 +25,7 @@ const RenderTable = () => {
   const dispatch = useAppDispatch();
 
   const { tableData, editTable } = useAppSelector((state) => state.table);
-
+  
   const handleEdit = (data: TableData) => {
     dispatch(
       handleEditTable({
