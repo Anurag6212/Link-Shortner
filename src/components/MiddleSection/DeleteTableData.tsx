@@ -29,7 +29,7 @@ const DeleteTableData: React.FC = () => {
       <div className={styles['dialog-wrapper']}>
         <p className="text-white">Are you sure you want to delete this link?</p>
         <DialogFooter className={styles['dialog-footer']}>
-          <Button type="submit">Save</Button>
+          <Button type="submit">Submit</Button>
         </DialogFooter>
       </div>
     </DialogWrapper>
