@@ -16,7 +16,7 @@ const DialogWrapper = ({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="sm:max-w-[425px]">
-        {title && <DialogTitle>{title}</DialogTitle>}
+        <DialogTitle>{title || ''}</DialogTitle>
         {children}
       </DialogContent>
     </Dialog>

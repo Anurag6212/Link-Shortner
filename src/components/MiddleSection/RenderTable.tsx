@@ -8,9 +8,9 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { TableData } from '@/Interfaces/tableInterfaces';
+import { TableData } from '@/Types/table';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
-import { handleEditTable } from '@/lib/Reducers/shortnerSlice';
+import { handleEditTable } from '@/store/Reducers/shortnerSlice';
 import { Pencil, Trash2 } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import DeleteTableData from './DeleteTableData';

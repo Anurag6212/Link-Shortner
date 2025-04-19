@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import authReducer from './Reducers/authSlice';
 import shortnerSlice from './Reducers/shortnerSlice';
+import userSlice from './Reducers/userSlice';
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
       auth: authReducer,
-      table : shortnerSlice
+      table : shortnerSlice,
+      user: userSlice
     },
   });
 };

@@ -6,8 +6,10 @@ import { DialogFooter } from '../ui/dialog';
 import DialogWrapper from '../ui/dialog-wrapper';
 import styles from '../../styles/login.module.scss';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
-import { toggleLoginMode } from '@/lib/Reducers/authSlice';
-import { registerInput } from '@/Interfaces/formInterfaces';
+import { toggleLoginMode } from '@/store/Reducers/authSlice';
+import { registerInput } from '@/Types/form';
+import { registerUser } from '@/store/Reducers/userSlice';
+import { User } from '@/Types/user';
 
 const Registration = ({}) => {
   const { loginMode } = useAppSelector((state) => state.auth);
@@ -20,7 +22,14 @@ const Registration = ({}) => {
     formState: { errors },
   } = useForm<registerInput>();
 
-  const onSubmit: SubmitHandler<registerInput> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<registerInput> = (data: User) => {
+    try {
+      dispatch(registerUser(data));
+      dispatch(toggleLoginMode(''));
+    } catch (error) {
+      console.error('Registration error:', error);
+    }
+  };
 
   return (
     <DialogWrapper

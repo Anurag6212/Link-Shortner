@@ -2,7 +2,7 @@ import {
   EditTable,
   ShortnerState,
   TableData,
-} from '@/Interfaces/tableInterfaces';
+} from '@/Types/table';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState: ShortnerState = {

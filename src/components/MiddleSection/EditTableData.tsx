@@ -2,9 +2,9 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import DialogWrapper from '../ui/dialog-wrapper';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
-import { handleEditTable } from '@/lib/Reducers/shortnerSlice';
+import { handleEditTable } from '@/store/Reducers/shortnerSlice';
 import styles from '../../styles/login.module.scss';
-import { editTableInput } from '@/Interfaces/formInterfaces';
+import { editTableInput } from '@/Types/form';
 import { DialogFooter } from '../ui/dialog';
 import { Button } from '../ui/button';
 import {

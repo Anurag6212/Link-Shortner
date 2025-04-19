@@ -6,8 +6,8 @@ import { DialogFooter } from '../ui/dialog';
 import DialogWrapper from '../ui/dialog-wrapper';
 import styles from '../../styles/login.module.scss';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
-import { toggleLoginMode } from '@/lib/Reducers/authSlice';
-import { loginInput } from '@/Interfaces/formInterfaces';
+import { toggleLoginMode } from '@/store/Reducers/authSlice';
+import { loginInput } from '@/Types/form';
 
 
 const Login = () => {

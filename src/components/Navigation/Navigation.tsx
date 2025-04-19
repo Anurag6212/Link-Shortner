@@ -4,9 +4,9 @@ import React from 'react';
 import { Button } from '../ui/button';
 import styles from '@/styles/navigation.module.scss';
 import { useAppDispatch, useAppSelector } from '@/lib/hooks';
-import { toggleLoginMode } from '@/lib/Reducers/authSlice';
+import { toggleLoginMode } from '@/store/Reducers/authSlice';
 import dynamic from 'next/dynamic';
-import { NavigationProps } from '@/Interfaces/navigationInterfaces';
+import { NavigationProps } from '@/Types/navigation';
 // import { ThemeMode } from '../Theme/ThemeMode';
 
 const Login = dynamic(() => import('@/components/Authentication/Login'), {
